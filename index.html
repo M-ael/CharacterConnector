@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Character Connector</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/konva@8.3.7/konva.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- Canvas Container -->
+    <div id="canvas-container"></div>
+
+    <!-- Left Sidebar -->
+    <div id="left-sidebar">
+      <h2>Nodes</h2>
+      <button id="add-node" class="action-button full-width-button">+ Add Node</button>
+      <ul id="node-list"></ul>
+      <hr class="sidebar-separator">
+      <div class="sidebar-footer">
+        <div class="footer-row">
+          <button id="clear-canvas" class="action-button">Clear</button>
+          <button id="import-data-button" class="action-button">Import</button>
+        </div>
+        <div class="footer-row">
+          <button id="open-settings" class="action-button">⚙️ Settings</button>
+          <button id="export-data" class="action-button">Export</button>
+        </div>
+        <input type="file" id="import-data" accept=".json" style="display: none;">
+      </div>
+    </div>
+    <button id="toggle-left-sidebar" class="toggle-sidebar-button">&laquo;</button>
+
+    <!-- Right Sidebar -->
+    <div id="right-sidebar">
+      <div id="right-sidebar-resizer"></div>
+      <h2>Details</h2>
+      <div id="info-content"></div>
+    </div>
+    <button id="toggle-right-sidebar" class="toggle-sidebar-button">&raquo;</button>
+  </div>
+
+  <!-- Settings Modal -->
+  <div id="settings-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Settings</h2>
+        <span class="close-button">&times;</span>
+      </div>
+      <div class="setting-item">
+        <span>Dark Mode:</span>
+        <label class="switch">
+          <input type="checkbox" id="dark-mode-toggle" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="setting-item">
+        <span>Auto-Open Right Sidebar on Node Click:</span>
+        <label class="switch">
+          <input type="checkbox" id="auto-open-sidebar-toggle" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="setting-item">
+        <span>Close comment bubbles or deselect objects when clicking away:</span>
+        <label class="switch">
+          <input type="checkbox" id="close-objects-toggle" checked>
+          <span class="slider"></span>
+        </label>
+      </div>      
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
