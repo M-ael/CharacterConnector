@@ -637,7 +637,6 @@ function clearCanvas() {
 // Helper function to check if a sidebar is hidden
 function isSidebarHidden(sidebarId) {
   const sidebarStateStr = localStorage.getItem('sidebarState');
-  console.log(sidebarStateStr);
 
   if (!sidebarStateStr) {
     // Initialize default state if not present
